@@ -24,7 +24,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         private static readonly IList<string> _readOnlyAutomaticVariables = new List<string>()
         {
             // Attempting to assign to any of those read-only variable would result in an error at runtime
-            "?", "true", "false", "Host", "PSCulture", "Error", "ExecutionContext", "Home", "PID", "PSEdition", "PSHome", "PSUICulture", "PSVersionTable", "ShellId"
+            "?", "$", "^", "true", "false", "Host", "PSCulture", "Error", "ExecutionContext", "Home", "PID", "PSEdition", "PSHome", "PSUICulture", "PSVersionTable", "ShellId"
         };
 
         private static readonly IList<string> _readOnlyAutomaticVariablesIntroducedInVersion6_0 = new List<string>()
@@ -36,11 +36,11 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules
         private static readonly IReadOnlyList<string> _writableAutomaticVariables = new List<string>()
         {
             // Attempting to assign to any of those could cause issues, only in some special cases could assignment be by design
-            "_", "AllNodes", "Args", "ConsoleFilename", "Event", "EventArgs", "EventSubscriber", "ForEach", "Input", "Matches", "MyInvocation",
+            "_", "AllNodes", "Args", "ConsoleFilename", "Event", "EventArgs", "EventSubscriber", "ForEach", "Switch", "Input", "Matches", "MyInvocation",
             "NestedPromptLevel", "Profile", "PSBoundParameters", "PsCmdlet", "PSCommandPath", "PSDebugContext",
             "PSItem", "PSScriptRoot", "PSSenderInfo", "Pwd", "PSCommandPath", "ReportErrorShowExceptionClass",
             "ReportErrorShowInnerException", "ReportErrorShowSource", "ReportErrorShowStackTrace", "Sender",
-            "StackTrace", "This"
+            "StackTrace", "This", "LastExitCode"
         };
 
         /// <summary>
